@@ -1,27 +1,32 @@
 var html = require('html-webpack-plugin');
-var config = new html({
+
+var indexConfig = new html({
   template : __dirname + '/app/index.html', 
   filename : 'index.html', 
   inject   : 'body'
 });
 
 module.exports = {
-  entry : ['./app/index.jsx'], 
-  module : {
-    loaders : [
-      { 
-        test: /\.jsx$/, 
-        exclude : /node_modules/, 
-        loader : "babel-loader", 
-        query : {
-          presets: ['react', 'es2016']
-        }
-      }
-    ]
+  entry : {
+    index : './app/index.jsx' 
   }, 
   output : {
-    filename : "index_bundle.js", 
-    path : __dirname + '/dist'
+    path : __dirname + '/dist', 
+    filename : "[name].bundle.js"
+  },
+  module : {
+    loaders : [
+     { test: /\.css$/, loader: 'style!css' },
+     { test: /\.jsx$/, exclude: /node_modules|mocha-browser\.js/, loader: 'babel-loader' },
+     { test: /\.woff(2)?$/,   loader: 'url?limit=10000&mimetype=application/font-woff' },
+     { test: /\.ttf$/, loader: 'file' },
+     { test: /\.eot$/, loader: 'file' },
+     { test: /\.svg$/, loader: 'file' },
+     { test: require.resolve('jquery'), loader: 'expose?jQuery' }, 
+    ]
   }, 
-  plugins : [config] 
+  resolve : {
+    extensions : ['.jsx', '.js', '.css']
+  }, 
+  plugins : [indexConfig] 
 };
