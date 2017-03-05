@@ -9,12 +9,12 @@ function Prompt(props) {
         <div className='jumbotron col-sm-6 col-sm-offset-3 text-center' style={transparentBg}> 
             <h1>{props.header}</h1>
             <div className='col-sm-12'>
-                <form onSubmit={props.onSubmitUser}>
+                <form onSubmit={props.handleSubmitUser}>
                     <div className='form-group'>
                         <input className='form-control' 
                             placeholder='Github Username' 
                             type='text'
-                            onChange={props.onUpdateUser}
+                            onChange={props.handleUpdateUser}
                             value ={props.username} />
                     </div>
                     <div className='form-group col-sm-4 col-sm-offset-4'>
@@ -25,13 +25,13 @@ function Prompt(props) {
                 </form>
             </div>
         </div>
-    )
+    );
 };
 
 Prompt.propTypes = {
     header: PropTypes.string.isRequired, 
-    onUpdateUser: PropTypes.func.isRequired, 
-    onSubmitUser: PropTypes.func.isRequired, 
+    handleUpdateUser: PropTypes.func.isRequired, 
+    handleSubmitUser: PropTypes.func.isRequired, 
     username: PropTypes.string.isRequired
 };
 
