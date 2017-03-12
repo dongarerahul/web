@@ -42,7 +42,6 @@ var PromptContainer = React.createClass({
     }, 
 
     render: function() {
-        console.log(this)
         return (
             <Prompt 
                 handleSubmitUser = {this.handleSubmitUser}

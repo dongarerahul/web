@@ -16,7 +16,7 @@ module.exports = {
   },
   module : {
     loaders : [
-     { test: /\.css$/, loader: 'style!css' },
+     { test: /\.css$/, loader: "style-loader!css-loader" },
      { test: /\.jsx$/, exclude: /node_modules|mocha-browser\.js/, loader: 'babel-loader' },
      { test: /\.woff(2)?$/,   loader: 'url?limit=10000&mimetype=application/font-woff' },
      { test: /\.ttf$/, loader: 'file' },
