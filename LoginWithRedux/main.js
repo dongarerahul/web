@@ -3,17 +3,17 @@ import { render } from 'react-dom'
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 
-import App from './App.jsx'
-import todoApp from './reducers/reducers'
+import LoginApp from './LoginApp.js'
+import actionReducers from './reducers/reducers'
 
-let store = createStore(todoApp)
+let store = createStore(actionReducers)
 
 let rootElement = document.getElementById('app')
 
 render(
   <Provider store = {store}>
-    <App />
-  </Provider>
+    <LoginApp />
+  </Provider>,
 
   rootElement
 )

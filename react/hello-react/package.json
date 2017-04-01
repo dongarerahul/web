@@ -14,12 +14,15 @@
     "babel-loader": "^6.3.2",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
+    "react-router": "^4.0.0",
     "webpack": "^2.2.1"
   },
   "devDependencies": {
     "babel-preset-es2016": "^6.22.0",
     "babel-preset-react": "^6.23.0",
+    "browser-history": "^1.0.1",
     "html-webpack-plugin": "^2.28.0",
+    "react-redux": "^5.0.3",
     "webpack-dev-server": "^2.4.2"
   }
 }
