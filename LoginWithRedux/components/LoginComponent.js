@@ -3,7 +3,7 @@ import React, { Component, PropTypes } from 'react'
 export default class LoginComponent extends Component {
   render() {
     return (
-      <div>
+      <div className="col-sm-8 col-sm-offset-2">
         <input type="text" ref='username' />
         <div />
         <input type="password" ref='password' />
