@@ -10,14 +10,14 @@ main = Html.program {
   subscriptions = subscriptions
   }
 
+init : (Model, Cmd Msg)
+init = (Model 1, Cmd.none)
+
 type alias Model = { dieFace : Int }
 type Msg = Roll | NewFace Int
 
 subscriptions : Model -> Sub Msg
 subscriptions model = Sub.none
-
-model : Model
-model = Model 1
 
 view : Model -> Html Msg
 view model = div [] [
@@ -27,8 +27,5 @@ view model = div [] [
 
 update : Msg -> Model -> (Model, Cmd Msg)
 update msg model = case msg of
-  Roll -> (model, Random.generate NewFace (Random.int 1 6))
+  Roll         -> (model, Random.generate NewFace (Random.int 1 6))
   NewFace face -> (Model face, Cmd.none)
-
-init : (Model, Cmd Msg)
-init = (Model 1, Cmd.none)
